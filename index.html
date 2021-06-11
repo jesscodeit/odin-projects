@@ -4,6 +4,70 @@
         <meta charset="UTF-8">
         <title>Google</title>
         <style>
+            * {
+                box-sizing: border-box;
+            }
+            body, input, button {
+                font-size: 14px;
+                font-family: Roboto, arial, sans-serif;
+                color: #222;
+            }
+
+            a {
+                text-decoration: none;
+                color: #222;
+            }
+            a:hover {text-decoration: underline;}
+
+            #header-bar {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 6px;
+                height: 60px;
+            }
+
+            #about {
+                margin: 0px 5px 0px 15px;
+                padding: 5px;
+            }
+
+            #store {
+                margin: 0px 5px 0px 5px;
+                padding: 5px;
+            }
+
+            #gmail {
+                font-size: 13px;
+                padding-left: 15px;
+            }
+
+            #images {
+                font-size: 13px;
+                padding-left: 15px;
+            }
+
+            #right-top {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+
+            }
+
+            #icons {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            .circle {
+                background-color: gray;
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+            }
+
             #logo {
                 display: block;
                 margin-left: auto;
@@ -12,17 +76,17 @@
         </style>
     </head>
     <body>
-        <div>
-            <a href="">About</a>
-            <a href="">Store</a>
-            <div>
+        <div id="header-bar">
+            <a href="" id="about">About</a>
+            <a href="" id="store">Store</a>
+            <div id="right-top">
                 <div>
-                    <a href="">Gmail</a>
-                    <a href="">Images</a>
+                    <a href="" id="gmail">Gmail</a>
+                    <a href="" id="images">Images</a>
                 </div>
-                <div>
-                    <div id="apps"></div>
-                    <div id="account"></div>
+                <div id="icons">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
                 </div>
             </div>
         </div>
@@ -37,13 +101,13 @@
                 <input type="submit" value="I'm Feeling Lucky">
             </div>
         </form>
-        <div>
+        <div id="safety-section">
             <img src="https://www.google.com/images/hpp/protecting-users-42x50.png"
             id="badge" alt="A safety badge logo" height="50" width="42">
             <a href="https://blog.google/products/search/five-ways-were-making-google-the-safer-way-to-search?utm_source=hpp&utm_medium=referral&utm_campaign=searchsafety&utm_content=&utm_term=">
                 Learn how Google helps keep you safe while you search</a>
         </div>
-        <div>
+        <div id="footer-section">
             <div>
                 <a href="https://sustainability.google/commitments/?utm_source=googlehpfooter&utm_medium=housepromos&utm_campaign=bottom-footer&utm_content=">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC">
