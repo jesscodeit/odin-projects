@@ -4,9 +4,21 @@
         <meta charset="UTF-8">
         <title>Google</title>
         <style>
-            * {
-                box-sizing: border-box;
+            /* unused code from original try at styling
+
+            #icons {
+                display: flex;
+                flex-direction: row;
             }
+
+
+            .flex-container-column {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            */
+
             body, input, button {
                 font-size: 14px;
                 font-family: Roboto, arial, sans-serif;
@@ -19,12 +31,11 @@
             }
             a:hover {text-decoration: underline;}
 
-            #header-bar {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                padding: 6px;
-                height: 60px;
+            .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
             }
 
             #about {
@@ -37,63 +48,51 @@
                 padding: 5px;
             }
 
-            #gmail {
+            #gmail, #images {
                 font-size: 13px;
-                padding-left: 15px;
-            }
-
-            #images {
-                font-size: 13px;
-                padding-left: 15px;
-            }
-
-            #right-top {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: flex-end;
-
-            }
-
-            #icons {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
+                padding-right: 15px;
             }
 
             .circle {
-                background-color: gray;
-                height: 32px;
-                width: 32px;
+                background-color: grey;
+                color: grey;
                 border-radius: 50%;
+                margin: 0px 15px 0px 10px;
             }
 
-            #logo {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
+            .flex-container-google {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                height: 230px;
             }
+
         </style>
     </head>
     <body>
-        <div id="header-bar">
-            <a href="" id="about">About</a>
-            <a href="" id="store">Store</a>
-            <div id="right-top">
-                <div>
-                    <a href="" id="gmail">Gmail</a>
-                    <a href="" id="images">Images</a>
-                </div>
-                <div id="icons">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                </div>
+
+        <div class="flex-container">
+            <div> 
+                <a href="" id="about">About</a>
+                <a href="" id="store">Store</a>
+            </div>
+
+            <div>
+                <a href="" id="gmail">Gmail</a>
+                <a href="" id="images">Images</a>
+                <a href="" class="circle">oo</a>
+                <a href="" class="circle">oo</a>
             </div>
         </div>
-        <div id="logo-div">
-            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" 
-            id="logo" alt="Image of Google Logo" height="92" width="272">
+
+        <div class="flex-container-google">
+            <div>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" 
+                id="logo" alt="Image of Google Logo" height="92" width="272">
+            </div>
         </div>
+
         <form>
             <input type="text">
             <div>
@@ -101,6 +100,7 @@
                 <input type="submit" value="I'm Feeling Lucky">
             </div>
         </form>
+
         <div id="safety-section">
             <img src="https://www.google.com/images/hpp/protecting-users-42x50.png"
             id="badge" alt="A safety badge logo" height="50" width="42">
