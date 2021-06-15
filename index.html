@@ -4,22 +4,9 @@
         <meta charset="UTF-8">
         <title>Google</title>
         <style>
-            /* unused code from original try at styling
-
-            #icons {
-                display: flex;
-                flex-direction: row;
-            }
-
-
-            .flex-container-column {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            */
 
             body, input, button {
+                margin: 0px;
                 font-size: 14px;
                 font-family: Roboto, arial, sans-serif;
                 color: #222;
@@ -68,6 +55,88 @@
                 height: 230px;
             }
 
+            .flex-container-query {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 140px;
+            }
+
+            #query-border {
+                height: 40px;
+                width: 560px;
+                border: 1px solid rgb(223, 225, 229);
+                border-radius: 20px;
+            }
+
+            #question-box {
+                height: 30px;
+                width: 500px;
+                margin-left: 30px;
+                margin-top: 4px;
+                font-size: 16px;
+                border: none;
+                outline: none;
+            }
+
+            #question-box:hover {cursor: text;}
+
+            #submit-buttons {
+                padding-top: 18px;
+            }
+
+            .click-me:hover {cursor: pointer;}
+
+            .click-me {
+                height: 34px;
+                background-color: rgb(248, 249, 250);
+                padding: 0px 16px 0px 16px;
+                border: 1px solid rgb(248, 249, 250);
+                border-radius: 4px;
+            }
+
+            .safety-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+            }
+
+            #badge {margin-right: 5px;}
+
+            #neutral {height: 14px;}
+
+            #footers a { color:#70757a;}
+
+            #footers {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                margin-top: 230px;
+                background-color:rgb(223, 225, 229);
+                height: 93px;
+            }
+
+            .footer-section-1 {
+                display: flex;
+                height: 46px;
+                justify-content: center;
+                align-items: center;
+                padding: 0px 100px 0px 100px;
+            }
+
+            .footer-section-2 {
+                display: flex;
+                height: 46px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bottom-links {
+                padding: 15px;
+            }
+
         </style>
     </head>
     <body>
@@ -93,37 +162,42 @@
             </div>
         </div>
 
-        <form>
-            <input type="text">
-            <div>
-                <input type="submit" value="Google Search">
-                <input type="submit" value="I'm Feeling Lucky">
+        <form class="flex-container-query">
+            <div id="query-border">
+                <input type="text" id="question-box"> 
+            </div>
+            <div id="submit-buttons">
+                <input class="click-me" type="submit" value="Google Search">
+                <input class="click-me" type="submit" value="I'm Feeling Lucky">
             </div>
         </form>
 
-        <div id="safety-section">
+        <div class="safety-section">
             <img src="https://www.google.com/images/hpp/protecting-users-42x50.png"
             id="badge" alt="A safety badge logo" height="50" width="42">
-            <a href="https://blog.google/products/search/five-ways-were-making-google-the-safer-way-to-search?utm_source=hpp&utm_medium=referral&utm_campaign=searchsafety&utm_content=&utm_term=">
-                Learn how Google helps keep you safe while you search</a>
+            <a href="https://blog.google/products/search/five-ways-were-making-google-the-safer-way-to-search?utm_source=hpp&utm_medium=referral&utm_campaign=searchsafety&utm_content=&utm_term=" 
+                id="learn">Learn how Google helps keep you safe while you search</a>
         </div>
-        <div id="footer-section">
-            <div>
+
+        <div id="footers">
+            <div class="footer-section-1">
                 <a href="https://sustainability.google/commitments/?utm_source=googlehpfooter&utm_medium=housepromos&utm_campaign=bottom-footer&utm_content=">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC">
-                    <span>Carbon neutral since 2007</span>
-                </a>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC"
+                id="neutral"> Carbon neutral since 2007</a>
             </div>
-            <div>
-                <a href="">Advertising</a>
-                <a href="">Business</a>
-                <a href="">How Search Works</a>
+            
+            <div class="footer-section-2">
+                <a href="" class="bottom-links">Advertising</a>
+                <a href="" class="bottom-links">Business</a>
+                <a href="" class="bottom-links">How Search Works</a>
             </div>
-            <div>
-                <a href="">Privacy</a>
-                <a href="">Terms</a>
-                <a href="">Settings</a>
+
+            <div class="footer-section-2">
+                <a href="" class="bottom-links">Privacy</a>
+                <a href="" class="bottom-links">Terms</a>
+                <a href="" class="bottom-links">Settings</a>
             </div>
         </div>
+
     </body>
 </html>
