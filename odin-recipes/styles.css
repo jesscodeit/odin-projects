@@ -1,0 +1,24 @@
+img {
+    width: 675px;
+    height: auto;
+    border: 5px solid darkseagreen;
+    border-radius: 25px;
+}
+
+* {
+    background-color: snow;
+    color: darkslategrey;
+    max-width: 700px;
+}
+
+h2 {
+    background-color: darkseagreen;
+    color: snow;
+    border-radius: 5px;
+    max-width: 700px;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
