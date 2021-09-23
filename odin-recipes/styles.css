@@ -11,7 +11,8 @@ img {
     max-width: 700px;
 }
 
-h2 {
+h2,
+.index {
     background-color: darkseagreen;
     color: snow;
     border-radius: 5px;
