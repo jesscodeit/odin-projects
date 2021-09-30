@@ -1,4 +1,4 @@
-This is my version of "Project: Landing Page" from The Odin Project. 
+This is my version of "Project: Landing Page" from The Odin Project. I've created a page dedicated to Milliways, the restaurant at the end of the universe. It is a fictional place from the Hitchhiker's Guide to the Galaxy "trilogy" written by Douglas Adams.
 
 Image attribution:
 Image with the alt="A photo of space." : David Kopacz from Pexels
