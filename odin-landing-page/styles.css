@@ -1,0 +1,132 @@
+/* styling */
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #f9faf8;
+}
+
+.intro-section,
+.footer {
+    background-color: #1f2937;
+    color: #f9faf8;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.header-link,
+.footer-link,
+.hero p {
+    font-size: 18px;
+    color: #acb9d4;
+}
+
+/* alignment */
+
+/* intro-section, header and footer alignment */
+.intro-section,
+.footer {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+}
+.header {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 20px 0 60px 0;
+}
+.header-link {
+    margin-left: 21px;
+}
+.footer {
+    height: 42px;
+    justify-content: center;
+}
+.awesome {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    column-gap: 42px;
+    margin-bottom: 100px;
+}
+.hero h1 {
+    font-size: 42px;
+}
+.hero p {
+    line-height: 1.5;
+    margin: 10px 0 21px 0;
+}
+button {
+    background-color: #3882f6;
+    color: #f9faf8;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    padding: 8px 21px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.hero {
+    width: 320px;
+}
+.cropped {
+    width: 640px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.cropped img {
+    margin-top: -175px;
+}
+
+/* info-section alignment */
+.info-section img {
+    max-width: 200px;
+}
+
+/* quote-section alignment */
+.quote-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: #e5e7eb;
+}
+
+.impossible {
+    width: 70%;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+.impossible p {
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+.quote-text {
+    font-size: 36px;
+    font-weight: 100;
+    font-style: italic;
+    text-align: justify;
+}
+
+.quote-author {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/* action-section alignment */

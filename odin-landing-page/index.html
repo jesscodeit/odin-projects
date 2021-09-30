@@ -4,57 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Odin Landing Page Project</title>
 </head>
 <body>
     <div class="intro-section">
         <div class="header">
             <a class="logo" href="">Milliways</a>
-
-            <a href="">Hours &amp; Location</a>
-            <a href="">Menus</a>
-            <a href="">About</a>
+            <div>
+                <a href="" class="header-link">hours &amp; location</a>
+                <a href="" class="header-link">menus</a>
+                <a href="" class="header-link">about</a>
+            </div>
         </div>
 
         <div class="awesome">
-            <h1>Witness the Gnab Gib</h1>
-            <p>Indulge in a sumptuous meal while watching the whole of creation explode around you. 
-                Milliways also serves a particularly exquisite Pan Galactic Gargle Blaster.</p>
-            <button>Make a Reservation</button>
 
-            <img src="images/spaceburst.jpg" alt="A photo of space.">
+            <div class="hero">
+                <h1>Witness the Gnab Gib</h1>
+                <p>Indulge in a sumptuous meal while watching the whole of creation explode around you. 
+                    Milliways also serves a particularly exquisite Pan Galactic Gargle Blaster.</p>
+                <button type="button">Make a Reservation</button>
+            </div>
+
+            <div class="cropped">
+                <img src="images/spaceburst.jpg" alt="A photo of space.">
+            </div>
 
         </div>
 
     </div>
 
     <div class="info-section">
-        <h2>What to Bring</h2>
 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/The_Hitchhiker%27s_Guide_to_the_Galaxy.svg" alt="The Hitchhiker's Guide to the Galaxy.">
-        <p>The Hitchhiker's Guide to the Galaxy or as it's simply known, the Guide. This will help you navigate your 
+        <h2>Arrive safely, adventure prepared</h2>
+
+        <div class="photo-section">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/The_Hitchhiker%27s_Guide_to_the_Galaxy.svg" alt="The Hitchhiker's Guide to the Galaxy.">
+            <p>The Hitchhiker's Guide to the Galaxy or as it's simply known, the Guide. This will help you navigate your 
             interstellar travel to our restaurant situated at the end of time and matter.</p>
 
-        <img src="images/towelstack.jpg" alt="A stack of towels.">
-        <p>A towel. If you have ever used the Guide before, you will know that a towel is just about the most important 
-            item one can carry. Especially if the need to hitchhike should arise.
-        </p>
+            <img src="images/towelstack.jpg" alt="A stack of towels.">
+            <p>A towel. If you have ever used the Guide before, you will know that a towel is just about the most important 
+            item one can carry. Especially if the need to hitchhike should arise.</p>
 
-        <img src="https://static.wikia.nocookie.net/hitchhikers/images/7/74/Infinitedrive.jpg/revision/latest?cb=20181130002039" alt="An Infinite Probability Drive.">
-        <p>Access to an Infinite Probability Drive. A wonderful method of crossing interstellar distances without having 
-            to muck about in hyperspace.
-        </p>
+            <img src="https://static.wikia.nocookie.net/hitchhikers/images/7/74/Infinitedrive.jpg/revision/latest?cb=20181130002039" alt="An Infinite Probability Drive.">
+            <p>Access to an Infinite Probability Drive. A wonderful method of crossing interstellar distances without having 
+            to muck about in hyperspace.</p>
 
-        <img src="images/octopusplate.jpg" alt="A plated portion of octopus.">
-        <p>An appetite. Not only does Milliways offer sentient creatures bred to want to be eaten, our wine list is more 
+            <img src="images/octopusplate.jpg" alt="A plated portion of octopus.">
+            <p>An appetite. Not only does Milliways offer sentient creatures bred to want to be eaten, our wine list is more 
             than three volumes long.</p>
+        </div>
+
     </div>
 
     <div class="quote-section">
-        <p class="quote-text">If you've done six impossible things this morning, 
-            why not round it off with breakfast at Milliways, the Restaurant at the End of the Universe.</p>
-        <p class="quote-author">-Advertising executives from the star system Bastablon</p>
-
+        <div class="impossible">
+            <p class="quote-text">If you've done six impossible things this morning, 
+                why not round it off with breakfast at Milliways, the Restaurant at the End of the Universe.</p>
+            <p class="quote-author">-Advertising executives from the star system Bastablon</p>
+        </div>
     </div>
 
     <div class="action-section">
@@ -67,8 +77,8 @@
 
     </div>
 
-    <div class="footer-section">
-        <a href="https://hitchhikers.fandom.com/wiki/Milliways" target="_blank">Um, what did I just read about??</a>
+    <div class="footer">
+        <a href="https://hitchhikers.fandom.com/wiki/Milliways" target="_blank" class="footer-link">Um, what did I just read about??</a>
     </div>
     
 </body>
