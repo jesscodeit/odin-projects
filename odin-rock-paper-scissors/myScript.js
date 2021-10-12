@@ -63,6 +63,10 @@ function playOnce() {
 // create a function that plays a five round game of RPS
 // have it keep score and report winner/loser at the end
 function playFive() {
+    userScore = 0;
+    computerScore = 0;
+    tieCount = 0;
+
     playOnce();
 
     playOnce();
@@ -84,9 +88,5 @@ function playFive() {
     else if (userScore < computerScore) {
         alert(`Five round game complete! Sorry, the computer wins! Overall, you won ${userScore} rounds and the computer won ${computerScore} rounds. There were ${tieCount} tied rounds.`);
     }
-
-    userScore = 0;
-    computerScore = 0;
-    tieCount = 0;
 
 }
