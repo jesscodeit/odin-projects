@@ -27,34 +27,35 @@ let tieCount = 0;
 function playOnce() {
     computerChoice = generateComputerChoice();
     userChoice = prompt("What is your choice? Rock, paper or scissors?").toLowerCase();
+
     if (userChoice === computerChoice) {
         alert(`It's a tie! You picked ${userChoice} and the computer also picked ${computerChoice}.`);
         tieCount++;
     }
-    else if ((userChoice = "rock") && (computerChoice = "scissors")) {
-        alert(`You win! You picked ${userChoice} and the computer picked ${computerChoice}. Rock beats scissors.`);
+    else if ((userChoice === "rock") && (computerChoice === "scissors")) {
+        alert(`You win! You picked rock and the computer picked scissors. Rock beats scissors.`);
         userScore++;
     }
-    else if ((userChoice = "rock") && (computerChoice = "paper")) {
-        alert(`You lose! You picked ${userChoice} and the computer picked ${computerChoice}. Paper beats rock.`);
+    else if ((userChoice === "rock") && (computerChoice === "paper")) {
+        alert(`You lose! You picked rock and the computer picked paper. Paper beats rock.`);
         computerScore++;
     }
 
-    else if ((userChoice = "paper") && (computerChoice = "rock")) {
-        alert(`You win! You picked ${userChoice} and the computer picked ${computerChoice}. Paper beats rock.`);
+    else if ((userChoice === "paper") && (computerChoice === "rock")) {
+        alert(`You win! You picked paper and the computer picked rock. Paper beats rock.`);
         userScore++;
     }
-    else if ((userChoice = "paper") && (computerChoice = "scissors")) {
-        alert(`You lose! You picked ${userChoice} and the computer picked ${computerChoice}. Scissors beat paper.`);
+    else if ((userChoice === "paper") && (computerChoice === "scissors")) {
+        alert(`You lose! You picked paper and the computer picked scissors. Scissors beat paper.`);
         computerScore++;
     }
 
-    else if ((userChoice = "scissors") && (computerChoice = "paper")) {
-        alert(`You win! You picked ${userChoice} and the computer picked ${computerChoice}. Scissors beat paper.`);
+    else if ((userChoice === "scissors") && (computerChoice === "paper")) {
+        alert(`You win! You picked scissors and the computer picked paper. Scissors beat paper.`);
         userScore++;
     }
-    else if ((userChoice = "scissors") && (computerChoice = "rock")) {
-        alert(`You lose! You picked ${userChoice} and the computer picked ${computerChoice}. Rock beats scissors.`);
+    else if ((userChoice === "scissors") && (computerChoice === "rock")) {
+        alert(`You lose! You picked scissors and the computer picked rock. Rock beats scissors.`);
         computerScore++;
     }
 }
@@ -63,13 +64,13 @@ function playOnce() {
 // have it keep score and report winner/loser at the end
 function playFive() {
     playOnce();
-    generateComputerChoice();
+
     playOnce();
-    generateComputerChoice();
+
     playOnce();
-    generateComputerChoice();
+
     playOnce();
-    generateComputerChoice();
+
     playOnce();
 
     if (userScore === computerScore) {
@@ -83,5 +84,9 @@ function playFive() {
     else if (userScore < computerScore) {
         alert(`Five round game complete! Sorry, the computer wins! Overall, you won ${userScore} rounds and the computer won ${computerScore} rounds. There were ${tieCount} tied rounds.`);
     }
+
+    userScore = 0;
+    computerScore = 0;
+    tieCount = 0;
 
 }
