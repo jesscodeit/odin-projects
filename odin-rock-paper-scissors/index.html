@@ -5,13 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
-    <script src="myScript.js"></script>
+
 </head>
 <body>
     <h1>Let's play Rock-Paper-Scissors!</h1>
-    <h2>To play a single game, type the following into the browser console:</h2>
-    <p>playOnce();</p>
-    <h2>To play a set of five games, type the following into the browser console:</h2>
-    <p>playFive();</p>
+    <h2>Pick your weapon:</h2>
+
+    <div id="buttonBox">
+        <button id="rock" type="button">Rock</button>
+        <button id="paper" type="button">Paper</button>
+        <button id="scissors" type="button">Scissors</button>
+    </div>
+
+    <div id="outcomesBox">
+        <div id="resultsBox">
+            <h2>Match Results:</h2>
+            <ol id="matches">
+
+            </ol>
+        </div>
+        <div id="scoreBox">
+            <div>
+                <h3>Player Score</h3>
+                <p id="userScore">0</p>
+            </div>
+            <div>
+                <h3>Tie Rounds</h3>
+                <p id="tieCount">0</p>
+            </div>
+            <div>
+                <h3>Computer Score</h3>
+                <p id="computerScore">0</p>
+            </div>
+        </div>
+    </div>
+    <script src="myScript.js"></script>
 </body>
 </html>
