@@ -1,6 +1,7 @@
 // what version of the game are we playing?
 let weapons = ["rock", "paper", "scissors"];
 let computerChoice;
+let userChoice; 
 
 // generate computers random choice of: rock, paper or scissors
 function generateComputerChoice() {
@@ -9,15 +10,7 @@ function generateComputerChoice() {
     return computerChoice;
 }
 
-//assign the randomly chosen move to computerChoice, see if it works
-//computerChoice = generateComputerChoice();
-//alert(`The computer chose ${computerChoice}.`);
-
-// prompt the user to choose: rock, paper or scissors
-// ensure user selection is case-insensitive 
-let userChoice; //removed the prompt and let it occur in function playOnce
-
-// create variables that keeps track of wins / losses for each player
+// create variables that keeps track of wins, loses, etc
 let computerScore = 0;
 let userScore = 0;
 let tieCount = 0;
@@ -25,18 +18,21 @@ let totalGames = 0;
 let matchComment = "";
 let endMatchComment = "";
 
+//creates post for single match result
 function newMatchResult() {
     let matchResult = document.createElement("li");
     matchResult.appendChild(document.createTextNode(matchComment));
     document.getElementById("matches").appendChild(matchResult);
 };
 
+//creates post for end game result
 function endGameResult() {
     let endGameResult = document.createElement("p");
     endGameResult.appendChild(document.createTextNode(endMatchComment));
     document.getElementById("matches").appendChild(endGameResult);
 }
 
+//function to reset scores and remove posted match history
 function resetGame() {
     computerScore = 0;
     userScore = 0;
@@ -50,27 +46,45 @@ function resetGame() {
     }
 }
 
+//make new button that allows user to reset the game
+function createResetButton() {
+    let makeButton = document.createElement("button");
+    makeButton.innerText = "Reset Game";
+    let atrb = document.createAttribute("id");
+    atrb.value = "resetButton";
+    makeButton.setAttributeNode(atrb);
+    document.getElementById("matches").appendChild(makeButton);
+
+    const resetButton = document.getElementById("resetButton");
+    resetButton.addEventListener('click', () => {
+        resetGame();
+    });
+}
+
 function updateScores() {
+    //post the updated score in each counter
     document.getElementById("computerScore").textContent = computerScore;
     document.getElementById("userScore").textContent = userScore;
     document.getElementById("tieCount").textContent = tieCount;
 
+    //post a final result after five matches and show a reset game button
     if (totalGames === 5) {
-        //figure out way to replace pick your weapon and buttons, with reset and play again option.
-
         if (userScore === computerScore) {
+            createResetButton();
             endMatchComment = `Five round game complete! Wow! It's a tie! 
             You won ${userScore} rounds and the computer also won ${computerScore} rounds. 
             There were ${tieCount} tied rounds.`;
             endGameResult();
         }
         else if (userScore > computerScore) {
+            createResetButton();
             endMatchComment = `Five round game complete! You are the winner!! 
             Overall, you won ${userScore} rounds and the computer won ${computerScore} rounds. 
             There were ${tieCount} tied rounds.`;
             endGameResult();
         }
         else if (computerScore > userScore) {
+            createResetButton();
             endMatchComment = `Five round game complete! Sorry, the computer wins! 
             Overall, you won ${userScore} rounds and the computer won ${computerScore} rounds. 
             There were ${tieCount} tied rounds.`;
@@ -136,12 +150,10 @@ function playOnce() {
         }
 }
 
-//new code below for game with UI
-
+//create eventListeners for the buttons that initiate a match of rps
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
-
 rock.addEventListener( 'click', () => {
     userChoice = "rock";
     playOnce();
@@ -156,43 +168,3 @@ scissors.addEventListener( 'click', () => {
     userChoice = "scissors";
     playOnce();
 });
-
-
-function newMatchResult() {
-    let matchResult = document.createElement("li");
-    matchResult.appendChild(document.createTextNode(matchComment));
-    document.getElementById("matches").appendChild(matchResult);
-};
-
-// create a function that plays a five round game of RPS
-// have it keep score and report winner/loser at the end
-
-//giving game UI, remove option to play five 
-/* function playFive() {
-    userScore = 0;
-    computerScore = 0;
-    tieCount = 0;
-
-    playOnce();
-
-    playOnce();
-
-    playOnce();
-
-    playOnce();
-
-    playOnce();
-
-    if (userScore === computerScore) {
-        alert(`Five round game complete! Wow! It's a tie! You won ${userScore} rounds and the computer also won ${computerScore} rounds. There were ${tieCount} tied rounds.`);
-    }
-
-    else if (userScore > computerScore) {
-        alert(`Five round game complete! You are the winner!! Overall, you won ${userScore} rounds and the computer won ${computerScore} rounds. There were ${tieCount} tied rounds.`);
-    }
-
-    else if (userScore < computerScore) {
-        alert(`Five round game complete! Sorry, the computer wins! Overall, you won ${userScore} rounds and the computer won ${computerScore} rounds. There were ${tieCount} tied rounds.`);
-    }
-
-} */
