@@ -58,5 +58,7 @@ function promptForNum() {
         destroyBoard();
         buildBoard();
         paintBrush();
+        //need to figure out why mouseover painting doesn't work after board reset...
+        //also need to figure out style to keep container same size no matter block count.
     }
 }
