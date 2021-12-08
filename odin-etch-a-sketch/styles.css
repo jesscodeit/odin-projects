@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+
 
 h1 { 
     text-align: center;
@@ -21,25 +19,23 @@ button {
     border: none;
 }
 
-#pixelContainer {
-    margin: auto;
-    width: 672px;
-    height: 672px;
+#mainArea {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+}
+
+#sketchBoard {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
 }
 
 .pixel {
-    width: 42px;
-    height: 42px;
-}
-
-.noPaint {
     background-color: black;
 }
 
-.paint {
+.painted {
     background-color: cornflowerblue;
 }
