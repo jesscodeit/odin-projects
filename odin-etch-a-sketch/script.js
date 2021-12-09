@@ -32,11 +32,11 @@ function promptForNum() {
 
 function checkUserNum() {
     if (isNaN(userNum)) {
-        alert("That is not a number! Oh well, here is the same board.");
+        alert("That is not a number! Oh well, here is the original board.");
         userNum = 16;
     }
     else if (userNum == null) {
-        alert("Did you mean to press that button? Oh well, here is the same board.");
+        alert("Did you mean to press that button? Oh well, here is the original board.");
         userNum = 16;
     }
     else if (userNum > 100) {
@@ -70,8 +70,23 @@ document.getElementById("resetButton").addEventListener('click', clickReset);
 function makeItPaintable() {
     document.querySelectorAll('.pixel').forEach(function(e) {
     e.addEventListener('mouseover', function() {
-        e.classList.add('painted');
+        e.style.backgroundColor = 'rgb(171, 171, 182)';
     });
 });
 }
 makeItPaintable();
+
+//on mouseover, change the "pixel" color to the default solid color
+document.getElementById("solidButton").addEventListener("click", makeItPaintable);
+
+//on mouseover, change the "pixel" color to a random color
+function makeItRainbow() {
+    document.querySelectorAll('.pixel').forEach(function(e) {
+    e.addEventListener('mouseover', function() {
+        e.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    });
+});
+}
+document.getElementById("rainbowButton").addEventListener("click", makeItRainbow);
+
+

@@ -10,13 +10,15 @@
 </head>
 <body>
     <h1>Etch-A-Sketch</h1>
-
-    <div class="button">
-        <button id="resetButton" type="button">Reset Board</button>
-    </div>
     <div id="mainArea">
+        <div class="options">
+            <button id="resetButton" type="button">Reset Board</button>
+            <p>Pick a pen:</p>
+            <button id="solidButton">Solid Paint</button>
+            <button id="rainbowButton">Rainbow Paint</button>
+        </div>
         <div id="sketchBoard">
-            <!-- div blocks with class of "pixel noPaint" will go here -->
+            <!-- div blocks with class of "pixel" will go here -->
         </div>
     </div>
 
