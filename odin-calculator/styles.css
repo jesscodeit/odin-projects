@@ -22,7 +22,7 @@ main {
    border-radius: 10px;
 }
 
-.display-box {
+#display-box {
     display: flex;
     justify-content: right;
     align-items: flex-end;
@@ -31,7 +31,7 @@ main {
     font-size: 2.5em;
     color: aliceblue;
     margin: 10px;
-    height: min-content;
+    min-height: min-content;
     border-radius: 5px;
 }
 

@@ -1,0 +1,1 @@
+This is a project prompt from The Odin Project. The goal of this project is to create a functional calculator. The calculator should be able to add, subtract, multiply and divide. 
