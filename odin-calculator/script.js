@@ -6,29 +6,44 @@ let displayText = '0';
 let firstOperand = Number(displayText);
 let secondOperand;
 let chosenOperator;
+let operandButtons = document.getElementsByClassName('operand');
+let operatorButtons = document.getElementsByClassName('operator');
+let equals = document.getElementById('equals');
+let clearButton = document.getElementById('clear');
+let backButton = document.getElementById('delete');
+let allButtons = document.querySelectorAll('button');
+
+function roundIt(theNumber) {
+    Number(theNumber);
+    return parseFloat(Math.round(theNumber + 'e' + 5) + 'e-' + 5);
+}
 
 function updateDisplay() {
+    displayText = String(displayText);
+    if (displayText.length > 13) {
+        displayText = displayText.substring(0, 13);
+    }
     displayBox.innerText = displayText;
 }
 updateDisplay();
 
 function add(num1, num2) {
-    result = num1 + num2;
+    result = roundIt(num1 + num2) ;
     return result;
 }
 
 function subtract(num1, num2) {
-    result = num1 - num2;
+    result = roundIt(num1 - num2);
     return result;
 }
 
 function multiply(num1, num2) {
-    result = num1 * num2;
+    result = roundIt(num1 * num2);
     return result;
 }
 
 function divide(num1, num2) {
-    result = num1 / num2;
+    result = roundIt(num1 / num2);
     return result;
 }
 
@@ -41,18 +56,26 @@ function operate(num1, num2, operator) {
         return multiply(num1, num2);
     } else if(operator === '/') {
         if(num2 === 0) {
-            return 'nope';
+            result = 'nej';
+            return result;
         } else {
              return divide(num1, num2);   
         }
     }
 }
 
-operandButtons = document.getElementsByClassName('operand');
+// Event listeners for buttons and keys 
+
 for (i=0; i < operandButtons.length; i++){
     operandButtons[i].addEventListener('click', function(){
-        if(displayText == '0' || displayText == firstOperand) {
+        if(this.value === '.' && String(displayText).includes('.')){
+            return;
+        } else if(String(displayText) === '0' || Number(displayText) === firstOperand) {
             displayText = this.value;
+        } else if (String(displayText) === 'nej') {
+            displayText = this.value;
+        } else if (displayText.length > 13) {
+            return;
         } else {
             displayText += this.value;
         }
@@ -60,7 +83,6 @@ for (i=0; i < operandButtons.length; i++){
     });
 }
 
-operatorButtons = document.getElementsByClassName('operator');
 for (i=0; i < operatorButtons.length; i++){
     operatorButtons[i].addEventListener('click', function(){
         if(firstOperand && chosenOperator){
@@ -78,7 +100,6 @@ for (i=0; i < operatorButtons.length; i++){
     });
 }
 
-equals = document.getElementById('equals');
 equals.addEventListener('click', function(){
     if(chosenOperator != null) {
         if(!secondOperand){
@@ -91,5 +112,34 @@ equals.addEventListener('click', function(){
         secondOperand = null;
         chosenOperator = null;
     }
+});
 
-})
+clearButton.addEventListener('click', function(){
+    result = null;
+    displayText = '0';
+    firstOperand = Number(displayText);
+    secondOperand = null;
+    chosenOperator = null;
+    updateDisplay();
+});
+
+backButton.addEventListener('click', function(){
+    if (displayText === '0') {
+        return;
+    } else if (displayText.length === 1) {
+        displayText = '0';
+    } else if (displayText.length > 1) {
+        displayText = displayText.slice(0, -1);
+    }
+    updateDisplay();
+});
+
+window.addEventListener('keydown', (e) => {
+    for (i=0; i < allButtons.length; i++) {
+        if (e.key === allButtons[i].value) {
+            allButtons[i].click();
+        } else if (e.key === 'Enter') {
+            allButtons[16].click();
+        }
+    }
+});
