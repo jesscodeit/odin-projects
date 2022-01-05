@@ -7,14 +7,16 @@
 }
 main {
     display: flex;
-    background-color: aliceblue;
+    background-color: #25274D;
     min-height: 100vh;
 }
 
 .calc-body {
    margin: auto;
    margin-top: 10vh;   
-   background-color: rgb(151, 136, 248);
+   background-color: hsl(206, 59%, 60%) ;
+   border: 3px solid;
+   border-color: hsl(206, 59%, 70%) hsl(206, 59%, 40%) hsl(206, 59%, 40%) hsl(206, 59%, 70%);
    width: 50vw;
    max-width: 450px;
    height: auto;
@@ -26,10 +28,12 @@ main {
     display: flex;
     justify-content: right;
     align-items: flex-end;
-    background-color: rgb(39, 29, 92);
+    background-color: hsl(236, 19%, 34%);
+    border: 3px solid;
+    border-color: hsl(237, 35%, 22%) hsl(236, 19%, 60%) hsl(236, 19%, 60%) hsl(237, 35%, 22%);
     padding: 15px;
     font-size: 2.5em;
-    color: aliceblue;
+    color: #aaabb8;
     margin: 10px;
     min-height: min-content;
     border-radius: 5px;
@@ -49,8 +53,34 @@ button {
     margin: 5px;
     border-radius: 15px;
     height: 60px;
-    color: rgb(39, 29, 92);
+    color: #25274D;
     font-size: 2em;
     text-align: center;
-    background-color: slateblue;
+    background-color: #90ccf4;
+    border: 2px solid;
+    border-color: hsl(204, 82%, 86%) hsl(204, 82%, 66%) hsl(204, 82%, 66%) hsl(204, 82%, 86%);
+}
+
+button.operator {
+    background-color: hsl(0, 87%, 75%);
+    border-color: hsl(0, 87%, 85%) hsl(0, 87%, 65%) hsl(0, 87%, 65%) hsl(0, 87%, 85%);
+}
+
+#equals,
+.bigger {
+    background-color: hsl(48, 87%, 63%);
+    border-color: hsl(48, 87%, 83%) hsl(48, 87%, 43%) hsl(48, 87%, 43%) hsl(48, 87%, 83%);
+}
+
+button:active {
+    background-color: hsl(204, 82%, 86%);
+}
+
+button.operator:active {
+    background-color: hsl(0, 87%, 85%);
+}
+
+#equals:active,
+.bigger:active {
+    background-color: hsl(48, 87%, 83%);
 }

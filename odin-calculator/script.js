@@ -72,7 +72,7 @@ for (i=0; i < operandButtons.length; i++){
             return;
         } else if(String(displayText) === '0' || Number(displayText) === firstOperand) {
             displayText = this.value;
-        } else if (String(displayText) === 'nej') {
+        } else if (isNaN(String(displayText))) {
             displayText = this.value;
         } else if (displayText.length > 13) {
             return;
@@ -132,6 +132,7 @@ backButton.addEventListener('click', function(){
         displayText = displayText.slice(0, -1);
     }
     updateDisplay();
+    chosenOperator = null;
 });
 
 window.addEventListener('keydown', (e) => {
